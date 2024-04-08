@@ -1,10 +1,10 @@
 from ultralytics import YOLO
 
 # Load a model
-model = YOLO('model/v17.pt')  # pretrained YOLOv8n model
+model = YOLO('model/polygon/best (12).pt')  # pretrained YOLOv8n model
 
 # Run batched inference on a list of images
-results = model(['data/test/f.jpeg', 'data/test/f1.jpeg'], save=True)  # return a list of Results objects
+results = model([f'data/test/mix/m{i}.jpeg' for i in range(1, 23)], save=True)  # return a list of Results objects
 
 # Process results list
 for result in results:

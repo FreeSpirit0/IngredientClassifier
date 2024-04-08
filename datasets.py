@@ -64,7 +64,7 @@ print('class example: ', classes[0])
 
 #2.
 # split train valid from train paths (80,20)
-train_image_paths, valid_image_paths = train_image_paths[:int(0.8*len(train_image_paths))], train_image_paths[int(0.8*len(train_image_paths)):] 
+train_image_paths, valid_image_paths = train_image_paths[:int(0.8*len(train_image_paths))], train_image_paths[int(0.2*len(train_image_paths)):] 
 
 #3.
 # create the test_image_paths
@@ -122,4 +122,5 @@ def visualize_augmentations(dataset, idx=0, samples=10, cols=5, random_img = Fal
     plt.tight_layout(pad=1)
     plt.show()    
 
-visualize_augmentations(train_dataset,np.random.randint(1,len(train_image_paths)), random_img = True)
+if __name__ == 'main':
+    visualize_augmentations(train_dataset,np.random.randint(1,len(train_image_paths)), random_img = True)
